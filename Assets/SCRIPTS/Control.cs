@@ -49,6 +49,9 @@ public class Control : MonoBehaviour
     public GameObject TutMove;
     public GameObject TutJump;
     public GameObject tutRoll;
+    public GameObject TutMovePC;
+    public GameObject TutJumpPC;
+    public GameObject tutRollPC;
     public int tut = 0;
     public float velocidadAnimacion = 0.5f;
 
@@ -542,7 +545,15 @@ public class Control : MonoBehaviour
             yield return new WaitForSeconds(2);
             pausa = 0;
             PanlePausa.SetActive(true);
-            TutMove.SetActive(true);
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                TutMove.SetActive(true);
+            }
+            else {
+
+                TutMovePC.SetActive(true);
+            }
+            
             Time.timeScale = 0;
         }
         
@@ -621,19 +632,43 @@ public class Control : MonoBehaviour
 
       public void TutorialMove() {
 
-                    TutMove.SetActive(false);
-                    TutJump.SetActive(true);
-                    tut = 1;
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            TutMove.SetActive(false);
+            TutJump.SetActive(true);
+        }
+        else {
+            TutMovePC.SetActive(false);
+            TutJumpPC.SetActive(true);
+
+        }
+                    
+            tut = 1;
     
     }
     public void TutorialJump() {
-        TutJump.SetActive(false);
-        tutRoll.SetActive(true);
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            TutJump.SetActive(false);
+            tutRoll.SetActive(true);
+        }
+        else {
+            TutJumpPC.SetActive(false);
+            tutRollPC.SetActive(true);
+
+        }
         tut = 2;
     }
     public void TutorialRoll() {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            tutRoll.SetActive(false);
+            
+        }
+        else {
 
-        tutRoll.SetActive(false);
+            tutRollPC.SetActive(false);
+        }
         tut = 3;
         pausa = 1;
         PanlePausa.SetActive(false);
