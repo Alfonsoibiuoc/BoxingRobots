@@ -1544,7 +1544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b377625d011fe3e44ab832bd5033f590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47cf64d0c0a2a114399bacc1638045d6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2936,7 +2936,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2f61dc4cd496a1545be506f8a61c1cda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8676c4544bada0948a29055e722876e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5898,9 +5898,10 @@ MonoBehaviour:
   platformControl: 0
   generadorCentro: {fileID: 355996010}
   RecorridoTotal: 250
-  tiempoTotal: 60
+  tiempoTotal: 50
   metrosSegundo: 2.2
   avance: 0
+  tiempoResta: 0
   destroyed: {fileID: 696786244}
   sliderRecorrido: {fileID: 1281317073}
   Slider: {fileID: 1281317071}
@@ -10683,7 +10684,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1602552304d552458ed55c84e0d0fdf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39fcd2c079eac324182ba51dd9f4192d, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

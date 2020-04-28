@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1183667916}
-  m_IndirectSpecularColor: {r: 0.364168, g: 0.1769616, b: 1.3576144, a: 1}
+  m_IndirectSpecularColor: {r: 0.10912536, g: 0.026375026, b: 1.9593325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16584,9 +16584,10 @@ MonoBehaviour:
   platformControl: 0
   generadorCentro: {fileID: 891398486}
   RecorridoTotal: 250
-  tiempoTotal: 90
+  tiempoTotal: 50
   metrosSegundo: 2.2
   avance: 0
+  tiempoResta: 0
   destroyed: {fileID: 1750558892}
   sliderRecorrido: {fileID: 2077599694}
   Slider: {fileID: 2077599692}
@@ -16600,6 +16601,9 @@ MonoBehaviour:
   TutMove: {fileID: 0}
   TutJump: {fileID: 0}
   tutRoll: {fileID: 0}
+  TutMovePC: {fileID: 0}
+  TutJumpPC: {fileID: 0}
+  tutRollPC: {fileID: 0}
   tut: 0
   velocidadAnimacion: 0.5
 --- !u!4 &1268081861

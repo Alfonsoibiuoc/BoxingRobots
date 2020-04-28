@@ -30,6 +30,7 @@ public class Control : MonoBehaviour
     public float tiempoTotal = 60;
     public float metrosSegundo;
     public float avance;
+    public float tiempoResta;
     float xCurve = 0;
     float yCurve = -15;
     float falloffCurve;
@@ -63,6 +64,7 @@ public class Control : MonoBehaviour
     {
         StartCoroutine(IniciarCarrera());
         sliderRecorrido.maxValue = RecorridoTotal;
+        tiempoResta = 0;
         
         InvokeRepeating("Angulo", 20, 20);
         Vida.maxValue = jugador.GetComponent<MovimientoPersonaje>().nivelVida;
@@ -80,7 +82,14 @@ public class Control : MonoBehaviour
 
             if (pausa == 0 && tut == 0) {
 
-                TutMove.SetActive(true);
+                if (Application.platform == RuntimePlatform.Android)
+                {
+                    TutMove.SetActive(true);
+                }
+                else {
+
+                    TutMovePC.SetActive(true);
+                }
             }
 
             Vector2 actual = new Vector2(GetComponent<CurveController>().x, GetComponent<CurveController>().y);
@@ -90,7 +99,8 @@ public class Control : MonoBehaviour
             GetComponent<CurveController>().y = resultado.y;
             
             /* Control Tiempo restante */
-            TimerControl = StartTime - Time.timeSinceLevelLoad + 10; //Tiempo Restante
+            TimerControl = StartTime - Time.timeSinceLevelLoad + 10 - tiempoResta; //Tiempo Restante
+            Debug.Log(tiempoResta);
             string TimerString = (TimerControl.ToString("000"));
             contador.GetComponent<Text>().text = TimerString.ToString();
             
@@ -410,7 +420,7 @@ public class Control : MonoBehaviour
 
             }
 
-            Debug.Log(offset);
+            
 
             foreach (Transform t in recorrido.transform)
             {
@@ -542,14 +552,15 @@ public class Control : MonoBehaviour
         jugador.GetComponent<MovimientoPersonaje>().IniciarCarrera = true;
         StartTime = tiempoTotal;
         if (nivelActual == 1) {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             pausa = 0;
             PanlePausa.SetActive(true);
             if (Application.platform == RuntimePlatform.Android)
             {
                 TutMove.SetActive(true);
-            }
-            else {
+                
+                    
+            }else{
 
                 TutMovePC.SetActive(true);
             }
@@ -636,8 +647,7 @@ public class Control : MonoBehaviour
         {
             TutMove.SetActive(false);
             TutJump.SetActive(true);
-        }
-        else {
+        }else {
             TutMovePC.SetActive(false);
             TutJumpPC.SetActive(true);
 

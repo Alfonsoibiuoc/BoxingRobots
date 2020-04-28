@@ -139,7 +139,6 @@ public class MovimientoPersonaje : MonoBehaviour
 
                             case 0:
 
-                                Debug.Log("Fuera");
                                 break;
                             case 1:
                                 carril = 0;
@@ -170,7 +169,7 @@ public class MovimientoPersonaje : MonoBehaviour
                                 Posicion = Posicion2.transform.position;
                                 break;
                             case 2:
-                                Debug.Log("Fuera");
+                               
                                 break;
 
                         }
@@ -320,6 +319,8 @@ public class MovimientoPersonaje : MonoBehaviour
             Instantiate(golpe, new Vector3(transform.position.x, transform.position.y + 2, transform.position.z), Quaternion.identity);
             anim.SetTrigger("Tropezar");
         }
+        GameObject.Find("CONTROLADOR").GetComponent<Control>().tiempoResta++;
+        
     }
 
     public void choquePlataforma() {

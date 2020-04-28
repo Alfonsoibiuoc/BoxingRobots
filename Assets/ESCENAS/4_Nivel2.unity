@@ -3499,9 +3499,10 @@ MonoBehaviour:
   platformControl: 0
   generadorCentro: {fileID: 549517138}
   RecorridoTotal: 250
-  tiempoTotal: 90
+  tiempoTotal: 50
   metrosSegundo: 2.2
   avance: 0
+  tiempoResta: 0
   destroyed: {fileID: 1753898566}
   sliderRecorrido: {fileID: 1089799946}
   Slider: {fileID: 1089799944}
@@ -3515,6 +3516,9 @@ MonoBehaviour:
   TutMove: {fileID: 0}
   TutJump: {fileID: 0}
   tutRoll: {fileID: 0}
+  TutMovePC: {fileID: 0}
+  TutJumpPC: {fileID: 0}
+  tutRollPC: {fileID: 0}
   tut: 0
   velocidadAnimacion: 0.5
 --- !u!4 &724222151
