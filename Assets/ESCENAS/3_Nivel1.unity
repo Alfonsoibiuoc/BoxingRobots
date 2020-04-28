@@ -5914,9 +5914,9 @@ MonoBehaviour:
   TutMove: {fileID: 99676013}
   TutJump: {fileID: 432261199}
   tutRoll: {fileID: 1323672492}
-  TutMovePC: {fileID: 0}
-  TutJumpPC: {fileID: 0}
-  tutRollPC: {fileID: 0}
+  TutMovePC: {fileID: 174494050}
+  TutJumpPC: {fileID: 1906048841}
+  tutRollPC: {fileID: 409444704}
   tut: 0
   velocidadAnimacion: 0.5
 --- !u!4 &924578141
